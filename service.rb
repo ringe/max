@@ -4,7 +4,7 @@ LOG_FILE = 'C:\\tunow_max.log'
 
 require "rubygems"
 require "sinatra/base"
-require "max"
+require_relative "max"
 
 begin
   require 'win32/daemon'
@@ -20,10 +20,10 @@ begin
       Max.run! :host => 'localhost', :port => 9090, :server => 'thin'
       File.open(LOG_FILE, "a"){ |f| f.puts "***Max service started #{Time.now}" }
       #puts 'bye'
-#      while running?
-#        sleep 10
-#        File.open(LOG_FILE, "a"){ |f| f.puts "Max service is running #{Time.now}" }
-#      end
+      while running?
+        sleep 10
+        File.open(LOG_FILE, "a"){ |f| f.puts "Max service is running #{Time.now}" }
+      end
     end
 
     def service_stop
