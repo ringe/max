@@ -20,7 +20,7 @@ begin
       Max.run! :host => 'localhost', :port => 9090, :server => 'thin'
       #puts 'bye'
       while running?
-        sleep 5000
+        sleep 50
         File.open(LOG_FILE, "a"){ |f| f.puts "Max service is running #{Time.now}" }
       end
     end
