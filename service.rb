@@ -17,8 +17,8 @@ begin
     def service_main
 
       #puts 'hi'
-      Max.run! :host => 'localhost', :port => 9090, :server => 'thin'
       File.open(LOG_FILE, "a"){ |f| f.puts "***Max service started #{Time.now}" }
+      Max.run! :host => 'localhost', :port => 9090, :server => 'thin'
       #puts 'bye'
       while running?
         sleep 10
