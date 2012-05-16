@@ -9,7 +9,7 @@ options = {:service_name=>'ruby_example_service',
   :description        => 'A custom service I wrote just for fun',
   :start_type         => Service::AUTO_START,
   :error_control      => Service::ERROR_NORMAL,
-  :binary_path_name   => 'c:\Ruby\bin\ruby.exe -C c:\max ruby_example_service.rb',
+  :binary_path_name   => 'c:\Ruby192\bin\ruby.exe -C c:\Ruby192\max ruby_example_service.rb',
   :load_order_group   => 'Network',
   :dependencies       => ['W32Time','Schedule'],
   :display_name       => 'ruby_example_service'}

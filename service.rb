@@ -1,10 +1,11 @@
+#!/usr/bin/env ruby
 # This runs a simple sinatra app as a service
 
 LOG_FILE = 'C:\\tunow_max.log'
 
 require "rubygems"
 require "sinatra/base"
-require_relative "max"
+require "./max"
 
 begin
   require 'win32/daemon'
